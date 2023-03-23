@@ -4,9 +4,6 @@ This project is devoted to making a neural network architecture with minimal lib
 
 See the PDF labeled "Neural Networks: Overview" for the basics of neural networks, from a mathematical perspective.
 
-# How to Use
-Make sure git is installed, and type "git clone X", where X is the hyperlink to this GitHub. Then open a Python code editor and type "import NetworkArch" to use the built in functions.
-
 # DenseNetwork Class
 This class contains all dense neural network architectures. Each object in this class has the following ***attributes***:
 
