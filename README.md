@@ -9,6 +9,8 @@ Make sure git is installed, and type "git clone X", where X is the hyperlink to 
 
 # DenseNetwork Class
 This class contains all dense neural network architectures. Each object in this class has the following ***attributes***:
+0. **init** 
+   -Initialization of a network has manditory input arch, which is a list of integers. Optional argument are sigma = 'arctan', d_sigma = 'd_arctan',  and rand_scale = 1. 
 1. **arch**
    - A list of numbers describing the number of neurons per layer.
 2. **weight**
