@@ -92,7 +92,9 @@ class DenseNetwork:
         print(f"Network sigma: \n{self.sigma}")
         print(f"Network d_sigma: \n{self.d_sigma}")
         return
-    
+
+#This is a typical use case
+"""
 network = DenseNetwork([1,2,3])
 network.print_state()
 input_data = np.array([1])
@@ -106,3 +108,4 @@ for k in range(1000):
     network.gradient(input_data, expected_output)
     network.do_GD(1)
 print(network.evaluate(input_data))
+"""
