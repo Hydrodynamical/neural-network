@@ -37,3 +37,17 @@ The ***methods*** for this class are the following:
    - Update the weights and biases of the network using gradient decent, and a given step size. 
 4. **print_state**
    - This is for debugging. Prints out the attributes of the network.
+   
+# Example Usage
+In any Python IDE, you can use the following commands to use the DenseNetwork class:
+
+```python
+!git clone ...
+import numpy as np
+import math
+from neuralnetwork.NetworkArch import DenseNetwork
+network = DenseNetwork(arch = [10, 5, 1])
+input = np.random.randn(10)
+network.evaluate(input)
+network.print_state()
+```
