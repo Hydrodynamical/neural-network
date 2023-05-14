@@ -105,7 +105,7 @@ class DenseNetwork:
 
 #This is a typical use case
 """
-network = DenseNetwork([1,2,3])
+network = DenseNetwork([1,2,4])
 network.print_state()
 input_data = np.array([1])
 expected_output = np.array([1,0,1,1])
