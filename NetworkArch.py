@@ -1,6 +1,7 @@
 ###REQUIRED LIBRARIES###
 import math 
 import numpy as np
+import pickle
 ########################
 
 ###GPU SPEEDUP LIBRARY###
@@ -12,20 +13,24 @@ import numpy as np
 pii = 1/math.pi   
 ########################
 
+######MATHEMATICAL FUNCTIONS#######
+def arctan(x):
+    return np.arctan(x)*pii + 0.5
+
+def d_arctan(x):
+    return pii/(1+ (x ** 2))
+###################################
+
 class DenseNetwork:
     """This class defines a dense neural network"""
     def __init__(self, arch, sigma = 'arctan', d_sigma = 'd_arctan', rand_scale = 1):
         #TODO: ADD ReLu, softmax, etc
         if sigma == 'arctan':
-            def s(x):
-                return np.arctan(x)*pii + 0.5
-            self.sigma = s
+            self.sigma = arctan
         else:
             self.sigma = sigma
-        if d_sigma == 'd_arctan':
-            def d_s(x):
-                return pii/(1+ (x ** 2)) 
-            self.d_sigma = d_s
+        if d_sigma == 'd_arctan': 
+            self.d_sigma = d_arctan
         else:
             self.d_sigma = d_sigma
         self.arch = arch #network architecture as list
@@ -92,6 +97,11 @@ class DenseNetwork:
         print(f"Network sigma: \n{self.sigma}")
         print(f"Network d_sigma: \n{self.d_sigma}")
         return
+    
+    def save(self, filename):
+        with open(filename + '.pickle', 'wb') as f:
+            pickle.dump(self, f)
+            
 
 #This is a typical use case
 """
